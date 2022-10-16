@@ -166,13 +166,11 @@ function fEcouteSouris() {
     plateau.children[i].addEventListener("touchstart", () =>
       fEnfonceBouton(plateau.children[i], i)
     );
-
     plateau.children[i].addEventListener("touchend", () =>
       fRelacheBouton(plateau.children[i])
     );
-
     plateau.children[i].addEventListener("touchmove", (event) =>
-      fDeplaceSouris(plateau.children[i], i)
+      fTouchMove(event)
     );
   }
 }
@@ -242,6 +240,21 @@ function fRelacheBouton() {
 }
 
 function fDeplaceSouris(c, index) {
+  if (!c.classList.contains("active") && boutonEnfonce) {
+    if (fVoisines(precNumCible, index)) {
+      mot.innerHTML += c.innerHTML;
+      c.classList.add("active");
+      precNumCible = index;
+      if (tMots[mot.innerText]) {
+        score.innerHTML = parseInt(score.innerText) + 1;
+      }
+    }
+  }
+}
+
+function fTouchMove(e) {
+  c = document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY);
+  index = parseInt(c.attributes.id.value.replace("case", ""));
   if (!c.classList.contains("active") && boutonEnfonce) {
     if (fVoisines(precNumCible, index)) {
       mot.innerHTML += c.innerHTML;
