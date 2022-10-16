@@ -1,0 +1,83 @@
+#jeu {
+  width: 420px;
+  height: 540px;
+  padding: 25px;
+  margin: auto;
+  background-color: #102d44;
+  box-shadow: 0 2px 4px #1e3851;
+  cursor: default;
+}
+
+#score,
+#mot,
+#chrono {
+  width: 379px;
+  height: 30px;
+  margin: 0 auto 10px auto;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+}
+
+#mot {
+  background-color: #1e3851;
+  text-shadow: 0 1px #1e3851;
+}
+
+#plateau {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  padding-right: 21px;
+}
+
+.case {
+  float: left;
+  width: 79px;
+  height: 79px;
+  margin: 21px 0 0 21px;
+  background-color: #ececec;
+
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 79px;
+  vertical-align: middle;
+  display: inline-block;
+
+  box-shadow: 0px 6px 6px #1e3851;
+}
+
+.active {
+  background-color: #1e3851;
+  color: white;
+}
+
+#jeu,
+#score,
+#mot,
+#plateau,
+.case {
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+audio {
+  display: none;
+}
+
+body {
+  background-color: #0d2438;
+}
+
+#chrono:hover,
+.case:hover {
+  cursor: pointer;
+}
